@@ -1,6 +1,7 @@
 import ollama from 'ollama'
 import { euclideanDistance } from './eDistance.js';
 import { plotTwoWords } from './basicPlot.js';
+import { cosineSimilarity } from './cosineSimilarity.js';
 
 // Check if at least one command line argument is provided
 if (process.argv.length < 3) {
@@ -24,5 +25,6 @@ const embeddingPrompt2 = await ollama.embeddings({
 
 
 const distance = euclideanDistance(embeddingPrompt1.embedding, embeddingPrompt2.embedding);
-console.log({ prompt1, prompt2, distance })
+const cosineSimilarityValue = cosineSimilarity(embeddingPrompt1.embedding, embeddingPrompt2.embedding)
+console.log({ prompt1, prompt2, distance, cosineSimilarityValue })
 plotTwoWords(embeddingPrompt1.embedding, embeddingPrompt2.embedding)
