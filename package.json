@@ -6,16 +6,22 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "index": "npx tsc && node dist/index"
+    "index": "npx tsc && node dist/index",
+    "eDistance": "npx tsc && node dist/eDistance"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/plotly.js-dist-min": "^2.3.4",
     "typescript": "^5.3.3"
   },
   "dependencies": {
     "@langchain/community": "^0.0.26",
-    "langchain": "^0.1.12"
+    "langchain": "^0.1.12",
+    "ml-pca": "^4.1.1",
+    "nodeplotlib": "^1.1.2",
+    "ollama": "^0.4.9",
+    "plotly.js-dist-min": "^2.29.1"
   }
 }
