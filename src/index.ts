@@ -23,8 +23,13 @@ const embeddingPrompt2 = await ollama.embeddings({
   prompt: prompt2
 })
 
+export const main = () => {
+  
+  // const distance = euclideanDistance(embeddingPrompt1.embedding, embeddingPrompt2.embedding);
+  const cosineSimilarityValue = cosineSimilarity(embeddingPrompt1.embedding, embeddingPrompt2.embedding)
+  console.log({ prompt1, prompt2, cosineSimilarityValue })
+  // plotTwoWords(embeddingPrompt1.embedding, embeddingPrompt2.embedding)
+}
 
-const distance = euclideanDistance(embeddingPrompt1.embedding, embeddingPrompt2.embedding);
-const cosineSimilarityValue = cosineSimilarity(embeddingPrompt1.embedding, embeddingPrompt2.embedding)
-console.log({ prompt1, prompt2, distance, cosineSimilarityValue })
-plotTwoWords(embeddingPrompt1.embedding, embeddingPrompt2.embedding)
+export default main()
+
